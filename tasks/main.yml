@@ -1,5 +1,8 @@
 ---
 - name: install zmq packages
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - libzmq-dev
+  apt:
+    name: {{ packages }}
+    state: latest
+  vars:
+    packages:
+      - libzmq-dev
